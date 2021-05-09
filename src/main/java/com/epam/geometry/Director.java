@@ -8,13 +8,15 @@ import java.util.List;
 public class Director {
 
     //TODO: uncomment
-//    private final DataReader reader;
-//    private final Validator validator;
-//    private final Creator creator;
+    private final DataReader reader;
+    private final Validator validator;
+    private final Creator creator;
 
 
     public Director(DataReader reader, Validator validator, Creator creator) {
-        //TODO: inject you dependencies here
+    	this.reader = reader;
+    	this.validator = validator;
+    	this.creator = creator;
     }
 
     // Input file contains multiple lines, each line a geometry object
