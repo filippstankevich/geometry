@@ -2,29 +2,29 @@ package com.epam.geometry.model;
 
 public class Circle {
 	
-	private int radius;
+	private double radius;
 	
-	private int center;
+	//private double center;
 
-	public int getRadius() {
+	public double getRadius() {
 		return radius;
 	}
 
-	public void setRadius(int radius) {
+	public void setRadius(double radius) {
 		this.radius = radius;
 	}
 
-	public int getCenter() {
+	/*public double getCenter() {
 		return center;
 	}
 
 	public void setCenter(int center) {
 		this.center = center;
-	}
+	}*/
 	
 	public Circle() {}
 	
-	public Circle(int radius) {
+	public Circle(double radius) {
 		this.radius = radius;
 	}
 
@@ -32,8 +32,9 @@ public class Circle {
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + center;
-		result = prime * result + radius;
+		long temp;
+		temp = Double.doubleToLongBits(radius);
+		result = prime * result + (int) (temp ^ (temp >>> 32));
 		return result;
 	}
 
@@ -41,7 +42,7 @@ public class Circle {
 	public boolean equals(Object obj) {
 		if (this == obj) {
 			return true;
-		}			
+		}
 		if (obj == null) {
 			return false;
 		}
@@ -49,10 +50,7 @@ public class Circle {
 			return false;
 		}
 		Circle other = (Circle) obj;
-		if (center != other.center) {
-			return false;
-		}
-		if (radius != other.radius) {
+		if (Double.doubleToLongBits(radius) != Double.doubleToLongBits(other.radius)) {
 			return false;
 		}
 		return true;
