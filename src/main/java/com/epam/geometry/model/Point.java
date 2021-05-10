@@ -24,13 +24,7 @@ public class Point {
 		this.x = x;
 		this.y = y;
 	}
-	
-	public Point(double x) {
-		this.x = x;
-		this.y = x;
-	}
-	
-	
+		
 	@Override
 	public int hashCode() {
 		final int prime = 31;

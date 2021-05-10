@@ -4,7 +4,7 @@ public class Circle {
 	
 	private double radius;
 	
-	//private double center;
+	private Point center;
 
 	public double getRadius() {
 		return radius;
@@ -13,25 +13,32 @@ public class Circle {
 	public void setRadius(double radius) {
 		this.radius = radius;
 	}
-
-	/*public double getCenter() {
+	
+	public Point getCenter() {
 		return center;
 	}
 
-	public void setCenter(int center) {
+	public void setCenter(Point center) {
 		this.center = center;
-	}*/
+	}
 	
 	public Circle() {}
 	
-	public Circle(double radius) {
+	public Circle(double radius, Point center) {
 		this.radius = radius;
+		this.center = center; 
+	}
+	
+	public Circle(double radius, double x, double y) {
+		this.radius = radius;
+		this.center = new Point (x, y); 
 	}
 
 	@Override
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
+		result = prime * result + ((center == null) ? 0 : center.hashCode());
 		long temp;
 		temp = Double.doubleToLongBits(radius);
 		result = prime * result + (int) (temp ^ (temp >>> 32));
@@ -50,6 +57,13 @@ public class Circle {
 			return false;
 		}
 		Circle other = (Circle) obj;
+		if (center == null) {
+			if (other.center != null) {
+				return false;
+			}
+		} else if (!center.equals(other.center)) {
+			return false;
+		}
 		if (Double.doubleToLongBits(radius) != Double.doubleToLongBits(other.radius)) {
 			return false;
 		}
@@ -58,7 +72,8 @@ public class Circle {
 
 	@Override
 	public String toString() {
-		return "Circle (radius = " + radius + ")";
+		return "Circle [radius=" + radius + ", center=" + center + "]";
 	}
 
+	
 }
