@@ -72,7 +72,7 @@ public class Circle {
 
 	@Override
 	public String toString() {
-		return "Circle [radius=" + radius + ", center=" + center + "]";
+		return "Circle (radius = " + radius + ", center = " + center + ")";
 	}
 
 	

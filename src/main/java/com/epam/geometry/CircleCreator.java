@@ -1,23 +1,24 @@
 package com.epam.geometry;
 
-import com.epam.geometry.logic.CircleLogic;
+import java.util.List;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import com.epam.geometry.model.Circle;
 
 public class CircleCreator {
+	private static Logger logger = LogManager.getLogger();
 
-    public Circle createCircle(String line){
-    	//boolean isCircle = false;
-    	Circle circle = null;
-    	String[] strNumbers = line.split(" ");
-    	
-    	double radius = Double.parseDouble(strNumbers[0]);
-    	double x = Double.parseDouble(strNumbers[1]);
-    	double y = Double.parseDouble(strNumbers[2]);
-    	CircleLogic circleLogic = new CircleLogic();
-    	if(circleLogic.checkIsCircle(radius)) {
-    		circle = new Circle(radius, x, y);
-    	}   	
+	public Circle createCircle(List<Double> data){
 
-    	return circle;
-    }
+		double radius = data.get(0);
+		double x = data.get(1);
+		double y = data.get(2); 
+
+		Circle circle = new Circle(radius, x, y);
+		logger.info("# object created #" + circle.toString());
+		
+		return circle;
+	}
+
+
 }

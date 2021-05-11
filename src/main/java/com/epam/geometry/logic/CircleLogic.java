@@ -1,6 +1,11 @@
 package com.epam.geometry.logic;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import com.epam.geometry.model.Circle;
+
 public class CircleLogic {
+	private static Logger logger = LogManager.getLogger();
 	
 	public boolean checkIsCircle(double radius) {
 		boolean result = true;
@@ -22,13 +27,15 @@ public class CircleLogic {
 		return numberCrossAxes == 1;	
 	}
 	
-	public double calculateCircleArea(double radius) {
-		double result =  (Math.PI * Math.pow(radius, 2));
+	public double calculateCircleArea(Circle circle) {
+		double result =  (Math.PI * Math.pow(circle.getRadius(), 2));
+		logger.info("# Circle area is #" + result);
 		return result;
 	}
 	
-	public double calculateCirclePerimeter(double radius) {
-		double result = 2 * Math.PI * radius;
+	public double calculateCirclePerimeter(Circle circle) {
+		double result = 2 * Math.PI * circle.getRadius();
+		logger.info("# Circle perimeter is #" + result);
 		return result;
 	}
 	
