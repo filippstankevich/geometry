@@ -21,8 +21,11 @@ public class DataReader {
 			String line;
 			List<String> linesArray = new ArrayList<>();
 			while((line = bufferedReader.readLine()) != null) {
-				logger.debug("# line read #" + line);
-				linesArray.add(line);
+				
+				if(!line.trim().isEmpty()) {
+					logger.debug("# line read #" + line);
+					linesArray.add(line);	
+				}
 			}
 			return linesArray;
 		}catch(IOException e) {

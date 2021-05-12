@@ -29,11 +29,6 @@ public class Circle {
 		this.center = center; 
 	}
 	
-	public Circle(double radius, double x, double y) {
-		this.radius = radius;
-		this.center = new Point (x, y); 
-	}
-
 	@Override
 	public int hashCode() {
 		final int prime = 31;
