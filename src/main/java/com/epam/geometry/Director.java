@@ -13,19 +13,25 @@ public class Director {
     private final DataReader reader;
     private final StringValidator validator;
     private final CircleCreator creator;
+    private CircleLogic circleLogic;
+    private DataParser dataParser;
 
     public Director(DataReader reader, StringValidator validator, CircleCreator creator) {
     	this.reader = reader;
     	this.validator = validator;
     	this.creator = creator;
     }
+    public void setCircleLogic(CircleLogic circleLogic) {
+		this.circleLogic = circleLogic;
+	}
+    public void setDataParser(DataParser dataParser) {
+		this.dataParser = dataParser;
+	}
     
     public List<Circle> process(String filename) throws DataException{
     	List<String> lines = reader.readLines(filename);
 		List<Circle> circles = new ArrayList<>();
-		DataParser dataParser = new DataParser();
 		List<Double> data = new ArrayList<>();
-		CircleLogic circleLogic = new CircleLogic();
 		
 		for(String line : lines) {
 			if(validator.validate(line)) {
