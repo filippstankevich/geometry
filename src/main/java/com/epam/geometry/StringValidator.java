@@ -10,6 +10,5 @@ public class StringValidator {
     		validLine = true;
     	}
     	return validLine;
-    }
-    
+    }   
 }

@@ -44,17 +44,4 @@ public class Director {
 		}
 		return circles;
     }
-    
-    public static void main(String[] args) throws DataException {
-    	CircleLogic circleLogic = new CircleLogic();
-    	Director dir = new Director(new DataReader(), new StringValidator(), new CircleCreator());
-    	List<Circle> circles = dir.process(TEXT_DATA);
-    	
-    	for(Circle e: circles) {
-    		System.out.println(e);
-    	}
-    	System.out.println(circleLogic.calculateCircleArea(circles.get(2)));
-    	System.out.println(circleLogic.calculateCirclePerimeter(circles.get(2)));
-    	
-    }
 }
