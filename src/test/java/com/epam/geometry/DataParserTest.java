@@ -9,9 +9,12 @@ public class DataParserTest {
 	
 	@Test
 	public void parseDataPositivTest() {
+		//given(pre-conditions)
 		String line = "7.0 8.0 9.0";
 		DataParser dataParser = new DataParser();
+		//when
 		List<Double> actualResult = dataParser.parseData(line);
+		//then(post-conditions)
 		Assert.assertNotNull(actualResult);
 		Assert.assertEquals(7.0, actualResult.get(0), 7.0);
 		Assert.assertEquals(8.0, actualResult.get(1), 8.0);
@@ -20,9 +23,10 @@ public class DataParserTest {
 	
 	@Test
 	public void parseDataNegativeTest() {
+		//given(pre-conditions)
 		String line = "";
 		DataParser dataParser = new DataParser();
-		//List<Double> actualResult = dataParser.parseData(line);
+		//when //then(post-conditions)
 		Assertions.assertThrows(NumberFormatException.class, () ->{
 			List<Double> actualResult = dataParser.parseData(line);
 			});
