@@ -2,12 +2,9 @@ package com.epam.geometry;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
-
 import com.epam.geometry.model.Circle;
-import com.epam.geometry.model.Point;
 
 public class CircleCreatorTest {
 	

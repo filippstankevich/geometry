@@ -1,24 +1,23 @@
 package com.epam.geometry.data;
 
-
 import java.util.List;
 import org.junit.Assert;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class DataReaderTest {
-	
+
 	@Test
 	public void readLinesTest() throws DataException {
-		  //given(pre-conditions)
+		//given(pre-conditions)
 		DataReader reader  = new DataReader();
-		 //when
+		//when
 		List<String> actualResult = reader.readLines("resources.txt");
 		//then(post-conditions)
 		Assert.assertNotNull(actualResult);
 		Assert.assertTrue(actualResult.size() == 15);
 	}
-	
+
 	@Test
 	public void readLinesNegativeTest() {
 		//given(pre-conditions)
