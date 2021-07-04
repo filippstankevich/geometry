@@ -8,13 +8,22 @@ import org.junit.jupiter.api.Test;
 public class DataReaderTest {
 
 	@Test
-	public void readLinesTest() throws DataException {
+	public void testReadLinesShouldReadLineFromFile() throws DataException {
 		//given(pre-conditions)
 		DataReader reader  = new DataReader();
 		//when
 		List<String> actualResult = reader.readLines("resources.txt");
 		//then(post-conditions)
 		Assert.assertNotNull(actualResult);
+	}
+
+	@Test
+	public void testReadLinesShouldReadLineFromRightFile() throws DataException {
+		//given(pre-conditions)
+		DataReader reader  = new DataReader();
+		//when
+		List<String> actualResult = reader.readLines("resources.txt");
+		//then(post-conditions)
 		Assert.assertTrue(actualResult.size() == 15);
 	}
 

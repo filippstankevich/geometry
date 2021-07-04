@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 public class StringValidatorTest {
 	
 	@Test
-	public void validatePositiveTest() {
+	public void testValidateTextShouldValidateWhenPositiveData() {
 		//given(pre-conditions)
 		String line = "5.0 6.0 7.0";
 		StringValidator stringValidator = new StringValidator();
@@ -17,7 +17,7 @@ public class StringValidatorTest {
 	}
 	
 	@Test
-	public void validateNegativeTest() {
+	public void testValidateTextShouldValidateWhenDataNegative() {
 		//given(pre-conditions)
 		String line = "5x 6.0 7.0";
 		StringValidator stringValidator = new StringValidator();
@@ -28,9 +28,9 @@ public class StringValidatorTest {
 	}
 	
 	@Test
-	public void validatedNegativeTest() {
+	public void testValidatedTextShouldValidateWhenNegativeData() {
 		//given(pre-conditions)
-		String line = "5.0  6.0 7.0";
+		String line = "5.0 6.0 7.0";
 		StringValidator stringValidator = new StringValidator();
 		//when
 		Boolean actualResult = stringValidator.validate(line);

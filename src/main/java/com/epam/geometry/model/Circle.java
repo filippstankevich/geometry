@@ -1,9 +1,9 @@
 package com.epam.geometry.model;
 
 public class Circle {
-	
+
 	private double radius;
-	
+
 	private Point center;
 
 	public double getRadius() {
@@ -13,7 +13,7 @@ public class Circle {
 	public void setRadius(double radius) {
 		this.radius = radius;
 	}
-	
+
 	public Point getCenter() {
 		return center;
 	}
@@ -21,14 +21,14 @@ public class Circle {
 	public void setCenter(Point center) {
 		this.center = center;
 	}
-	
+
 	public Circle() {}
-	
+
 	public Circle(double radius, Point center) {
 		this.radius = radius;
 		this.center = center; 
 	}
-	
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -70,5 +70,5 @@ public class Circle {
 		return "Circle (radius = " + radius + ", center = " + center + ")";
 	}
 
-	
+
 }

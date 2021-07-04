@@ -2,14 +2,12 @@ package com.epam.geometry.logic;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.Test;
-
 import com.epam.geometry.model.Circle;
 import com.epam.geometry.model.Point;
 
 public class CircleLogicTest {
-	
 	@Test
-	public void checkIsCircleTest() {
+	public void testCheckIsCircleShouldCheckWhenValidData() {
 		//given(pre-conditions)
 		CircleLogic circlelogic = new CircleLogic();
 		//when
@@ -19,7 +17,7 @@ public class CircleLogicTest {
 	}
 	
 	@Test
-	public void checkIsCircleNegativeTest() {
+	public void testCheckIsCircleShouldCheckWhenInvalidData() {
 		//given(pre-conditions)
 		CircleLogic circlelogic = new CircleLogic();
 		//when
@@ -29,7 +27,7 @@ public class CircleLogicTest {
 	}
 	
 	@Test
-	public void checkIsCircleNegativeWithNegativeNumberTest() {
+	public void testCheckIsCircleDoCheckWhenDataIsNegative() {
 		//given(pre-conditions)
 		CircleLogic circlelogic = new CircleLogic();
 		//when
@@ -39,7 +37,7 @@ public class CircleLogicTest {
 	}
 	
 	@Test
-	public void crossOneCoordinateAxesPositiveTest() {
+	public void testCheckCircleShouldCrossOneCoordinateAxesWhenDataIsPositive() {
 		//given(pre-conditions)
 		CircleLogic circlelogic = new CircleLogic();
 		//when
@@ -49,7 +47,7 @@ public class CircleLogicTest {
 	}
 	
 	@Test
-	public void crossOneCoordinateAxesNegativeCrossTwoAxesTest() {
+	public void testCheckCircleShouldCrossCrossTwoAxesWhenDataIsNegative() {
 		//given(pre-conditions)
 		CircleLogic circlelogic = new CircleLogic();
 		//when
@@ -59,7 +57,7 @@ public class CircleLogicTest {
 	}
 	
 	@Test
-	public void crossOneCoordinateAxesNegativeCrossZeroAxesTest() {
+	public void testCheckCircleShouldCrossOneCoordinateAxesWhenNegativeCrossZeroAxes() {
 		//given(pre-conditions)
 		CircleLogic circlelogic = new CircleLogic();
 		//when
@@ -69,7 +67,7 @@ public class CircleLogicTest {
 	}
 	
 	@Test
-	public void calculateCircleAreaTest() {
+	public void testCalculateCircleAreaShouldCalculateAreaWhenDataValid() {
 		//given(pre-conditions)
 		CircleLogic circlelogic = new CircleLogic();
 		Point point = new Point(2.0, 3.0);
@@ -82,7 +80,7 @@ public class CircleLogicTest {
 	}
 	
 	@Test
-	public void calculateCirclePerimeterTest() {
+	public void testCalculateCirclePerimeterShouldCalculatePerimeterWhenDataValid() {
 		//given(pre-conditions)
 		CircleLogic circlelogic = new CircleLogic();
 		Point point = new Point(2.0, 3.0);
